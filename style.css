@@ -1,0 +1,38 @@
+* {
+  font-family: "light italic";
+  text-align: center;
+}
+
+body { 
+  color: #1f2937;
+  font-weight: bold;
+  background-color: #E5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+  padding: 20px;
+  background-color: #1f2937;
+  color: #f9faf8;
+  > p {
+    color: red;
+    font-size: larger;
+  }
+}
+
+#middle {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+  align-items: stretch;
+  background-color: #E5e7eb;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  letter-spacing: .15rem;
+}
