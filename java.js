@@ -1,36 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
   //Elements
-  const game = ['Rock', 'Scissors', 'Paper'] 
-  const buttons = document.querySelectorAll('.buttons > button')
-  const result = document.querySelector('.buttons > p')
-  const redResult = document.querySelector('.footer > p')
-
+  const gameButtons = document.querySelectorAll('#game > .buttons')
+  const popup = document.querySelector('#popup')
+  const closeButtons = popup.querySelector('button')
   //Functions
-  function rsp(e) {
-    const user = e.target.className
-    let pc = game[Math.floor(Math.random() * 3)]
-    result.textContent = `User: ${user},  Computer: ${pc}`
-    if (user === pc) {
-      return redResult.textContent = 'Draw'
-    } else {
-      if ((user === 'Rock' && pc === 'Scissors') ||
-          (user === 'Scissors' && pc === 'Paper') ||
-          (user === 'Paper' && pc === 'Rock')) {
-        return redResult.textContent = 'You are the winner'
-      } else {
-        return redResult.textContent = 'Computer Won This Time, Try Again '
+  function bToggle(e) {
+    const backcolor = document.querySelector('#backcolor')
+    const popupResult = popup.querySelector('h2')
+    const popupWinner = popup.querySelector('h1')
+    const options = ['Rock','Scissors','Paper']
+    const user = e.target.classList.value
+    const computer = options[Math.floor(Math.random()*3)]
+    backcolor.classList.add('show')
+    popup.classList.add('show')
+    popupResult.textContent = `User : ${user} | Computer : ${computer}`
+    if (user === computer) {
+      return popupWinner.textContent = 'Draw'
+      } else { 
+        if ((user === 'Rock' && computer ==='Scissors') ||
+            (user === 'Scissors' && computer ==='Paper') ||
+            (user === 'Paper' && computer ==='Rock')) {
+            return popupWinner.textContent = 'Congrats! You Are The Winner'
+          } else {
+            return popupWinner.textContent = 'Try Again, We Can Be Better than Them'
+          }
       }
     }
+
+  function cToggle(e) {
+    backcolor.classList.remove('show')
+    popup.classList.remove('show')
   }
 
-  
+
+
   //Event Listener
-  buttons.forEach(b => {
-    b.addEventListener('click', rsp)
+  gameButtons.forEach(b => {
+    b.addEventListener('click', bToggle)
   });
-  
 
-  
-
+  closeButtons.addEventListener('click', cToggle)
 })
