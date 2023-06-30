@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameButtons = document.querySelectorAll('#game > .buttons')
   const popup = document.querySelector('#popup')
   const closeButtons = popup.querySelector('button')
+  const popupWinner = popup.querySelector('h1')
+  const popupResult = popup.querySelector('h2')
+  const backcolor = document.querySelector('#backcolor')
 
   //Functions
   function bToggle(e) {
-    const backcolor = document.querySelector('#backcolor')
-    const popupResult = popup.querySelector('h2')
-    const popupWinner = popup.querySelector('h1')
     const options = ['Rock','Scissors','Paper']
     const user = e.target.classList.value
     const computer = options[Math.floor(Math.random()*3)]
@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function cToggle(e) {
     backcolor.classList.remove('show')
     popup.classList.remove('show')
+    popupWinner.classList.remove('red')
+    popupWinner.classList.remove('blue')
+  }
+
+  function ifCongrats() {
+    if (popupWinner.textContent.includes('Congrats')){
+      popupWinner.classList.add('red')
+    } else {
+      popupWinner.classList.add('blue')
+    }
   }
 
   //Event Listener
@@ -39,4 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   closeButtons.addEventListener('click', cToggle)
+
+  gameButtons.forEach(b => {
+    b.addEventListener('click', ifCongrats)
+  });
 })

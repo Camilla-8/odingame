@@ -27,7 +27,6 @@ body {
   align-items: center;
   width: 90%;
   font-weight: bold;
-  color: #1f2937;
   background-color: aliceblue;
   border: 1px solid #1f2937;
   border-radius: 10px;
@@ -39,10 +38,9 @@ body {
   flex: 1;
   padding: 1em;
   > h1 {
-    color: #82abe3;
-    background-color: #1f2937;
+    background-color: #82abe3;
     padding: 1em 2em;
-  };
+  }
   > button {
     height:5vh;
     width: 10vw;
@@ -76,4 +74,9 @@ button {
   border-radius: 5px;
   font-weight: 600;
 }
+
+#popup > .red {
+  color: brown
+};
+
 
