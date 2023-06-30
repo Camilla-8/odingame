@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameButtons = document.querySelectorAll('#game > .buttons')
   const popup = document.querySelector('#popup')
   const closeButtons = popup.querySelector('button')
+
   //Functions
   function bToggle(e) {
     const backcolor = document.querySelector('#backcolor')
@@ -31,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     backcolor.classList.remove('show')
     popup.classList.remove('show')
   }
-
-
 
   //Event Listener
   gameButtons.forEach(b => {
