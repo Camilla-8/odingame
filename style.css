@@ -1,6 +1,7 @@
 * {
   font-family: "light italic";
   text-align: center;
+  border: red solid;
 }
 
 body { 
@@ -15,6 +16,7 @@ body {
   background: #000;
   opacity: 0%;
 }
+
 #backcolor.show {
   opacity: 60%;
 }
@@ -35,19 +37,25 @@ body {
   transition: transform 3s ease-in-out, opacity 1s ease;
   transform: translate(0%, 100%);
   transform-origin: center;
-  margin-bottom: 24px;
   flex: 1;
+  padding: 1em;
   > h1 {
     color: #82abe3;
     background-color: #1f2937;
     padding: 1em 2em;
+  };
+  > button {
+    height:5vh;
+    width: 10vw;
+    font-weight: bold;
   }
-  
 }
+
 #popup.show {
   transform: translate(0%, 0%);
   opacity: 100%;
 }
+
 #game {
   display: flex;
   flex-direction: column;
@@ -62,6 +70,7 @@ body {
     }
   }
 }
+
 button {
   background-color: #1f2937;
   color: #f9faf8;
